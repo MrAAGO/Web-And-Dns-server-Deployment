@@ -12,7 +12,7 @@
     <nav>
       <ul>
         <li><a href="#introduction">Introduction</a></li>
-        <li><a href="Server">Running Server in Cloud</a></li>
+        <li><a href="#Server">Running Server in Cloud</a></li>
         <li><a href="#conclusion">Conclusion</a></li>
       </ul>
     </nav>
