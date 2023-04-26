@@ -34,7 +34,7 @@
 
   <b>Connect through SSH and update and upgrade the server </b>
      
-   ` **apt update && apt full-upgrade -y ** `
+   apt update && apt full-upgrade -y 
      
    ![Screenshot 2023-04-26 110111](https://user-images.githubusercontent.com/86381942/234663526-2809aeca-6154-4622-9eab-21e02d74b791.png)
 
