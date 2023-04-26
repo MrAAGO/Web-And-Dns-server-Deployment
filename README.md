@@ -32,8 +32,10 @@
      
   ![Screenshot 2023-04-26 105241](https://user-images.githubusercontent.com/86381942/234662041-8cf4d9e8-bc40-4c92-9faf-5100b5c26a72.png)
 
-        
-   
+  <b>Connect through SSH </b>
+     
+   ![Screenshot 2023-04-26 110111](https://user-images.githubusercontent.com/86381942/234663526-2809aeca-6154-4622-9eab-21e02d74b791.png)
+
   </body>
 </html>
 
