@@ -21,18 +21,13 @@
       
 
   <p>In this Projects, we will learn how to set up, configure, and secure DNS, Web, and SQL servers to run a web application like WordPress. We will use a Linux server on a cloud provider like Digital Ocean and acquire a domain name, "crystalmind.academy". We will install and configure BIND as the authoritative DNS server. Then, we will install Apache as the web server and PHP as the scripting language for the backend. MySQL will be used as the SQL server to store data. These software components together form the LAMP stack. Finally, we will install WordPress and secure it, which is essential. WordPress is the most widely used web application, with more than a third of all websites running on it. By the end of this project, we will have a running WordPress website, and we will have learned how to set up and manage a LAMP stack.</p>
-    </section>
-    <section id="Server">
-      <h2>Running Server in Clouds</h2>
-      <h3>Milestone 1</h3>
-      <p>Docker is a popular platform that enables the creation and management of containerized applications. Containers are lightweight, portable, and self-sufficient units that package an application and its dependencies together, making it easy to deploy and run the application on different environments.</p>
-      <h3>Milestone 2</h3>
-      <p>Provide a brief description of the second milestone and its progress.</p>
-    </section>
-    <section id="conclusion">
-      <h2>Conclusion</h2>
-      <p>Here, you can summarize the progress of your project and any future plans.</p>
-    </section>
+      
+      <section id="Server">
+      <h2>Running Server in Cloud</h2>
+        
+   <p>In this section we will set up a Linux server using a virtual private server (VPS) on Digital Ocean. We will create a droplet (Digital Ocean's term for a VPS), choosing an operating system and data center region, setting up SSH authentication, and connecting to the server using an SSH client.</p>      
+        
+   
   </body>
 </html>
 
