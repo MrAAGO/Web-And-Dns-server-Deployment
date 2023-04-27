@@ -44,8 +44,10 @@
      
  <p>Now purchase a domain and also change DNS server to Personal Dns Server and adding host and ip address with hostname ns1.linuxpro.store and provide public ip address of our server it is also recommended to have secondary DNS server for the production environment.</p>
      
-     
-     
+  **PERSONAL DNS SERVER**
+   
+     ![screenshot-ap www namecheap com-2023 04 26-20_05_11](https://user-images.githubusercontent.com/86381942/234749410-ec4d965d-0dd2-4b17-bc89-9a66ea09459f.png)
+
      
  
  </body>
