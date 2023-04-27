@@ -89,7 +89,20 @@ To Check BIND 9 status run the below command
     
                    systemctl reload-or-restart bind9
     
+**To check the process Running on named**
+
+                   ps -ef | grep named 
     
+ 
+  ![Screenshot 2023-04-26 213833](https://user-images.githubusercontent.com/86381942/234763122-2df95b75-8606-4d9c-b22d-a65d1ee81c94.png)
+  
+    
+ **Main Configuration File of bind9 server**    
+     
+                   cat /etc/bind/named.conf
+    
+![Screenshot 2023-04-26 214040](https://user-images.githubusercontent.com/86381942/234763183-fb08c844-b96d-49d3-afb3-cce6ba7945b2.png)
+
 
    
    </body>
