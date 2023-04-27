@@ -13,7 +13,7 @@
       <ul>
         <li><a href="#introduction">Introduction</a></li>
         <li><a href="#Server">Running Server in Cloud</a></li>
-        <li><a href="#conclusion">Conclusion</a></li>
+        <li><a href="#dns">Getting a Domain Name</a></li>
       </ul>
     </nav>
     <section id="introduction">
@@ -38,7 +38,17 @@
      
    ![Screenshot 2023-04-26 110111](https://user-images.githubusercontent.com/86381942/234663526-2809aeca-6154-4622-9eab-21e02d74b791.png)
 
-  </body>
+ 
+ <section id="dns">
+     <h2>Getting a Domain Name</h2>
+     
+     <p>Now purchase a domain and also change DNS server to Personal Dns Server and adding host and ip address with hostname ns1.linuxpro.store and provide public ip address of our server it is also recommended to have secondary DNS server for the production environment.</p>
+     
+     
+     
+     
+ 
+ </body>
 </html>
 
 
