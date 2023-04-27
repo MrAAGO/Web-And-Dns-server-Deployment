@@ -107,7 +107,7 @@ To Check BIND 9 status run the below command
 
  **More Information About DNS Server Check out this Blog Post** 
     
-    DNS SERVER([https://www.example.com](https://medium.com/@Beepin/the-importance-of-dns-understanding-how-it-works-and-why-it-matters-a59f96cfabe0)   
+  [DNS SERVER]([https://www.example.com](https://medium.com/@Beepin/the-importance-of-dns-understanding-how-it-works-and-why-it-matters-a59f96cfabe0)   
     
    </body>
 </html>
