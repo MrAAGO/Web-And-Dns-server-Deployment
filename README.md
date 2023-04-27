@@ -16,7 +16,8 @@
         <li><a href="#dns">Getting a Domain Name</a></li>
         <li><a href="#bind">Installing a DNS Server(BIND9)</a></li>
     
-     </ul>
+        
+      </ul>
    </nav>
     
         <section id="introduction">
