@@ -77,7 +77,10 @@ To Check BIND 9 status run the below command
     
  ![Screenshot 2023-04-26 212751](https://user-images.githubusercontent.com/86381942/234759711-6f1f0610-4fe1-4601-9392-75099ffd03d1.png)
 
-   
+ **After installing BIND, let's set it to IPv 4 mode, since we are using only IPv4**
+    
+                    vim/etc/default/named
+    
    
    </body>
 </html>
