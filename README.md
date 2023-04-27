@@ -16,10 +16,10 @@
         <li><a href="#dns">Getting a Domain Name</a></li>
         <li><a href="#bind">Installing a DNS Server(BIND9)</a></li>
     
-      </ul>
-    </nav>
-    <section id="introduction">
-      <h2>Introduction</h2>
+         </ul>
+         </nav>
+        <section id="introduction">
+          <h2>Introduction</h2>
       
 
   <p>In this Projects, we will learn how to set up, configure, and secure DNS, Web, and SQL servers to run a web application like WordPress. We will use a Linux server on a cloud provider like Digital Ocean and acquire a domain name, "projectlinux.store". We will install and configure BIND 9 as the authoritative DNS server. Then, we will install Apache as the web server and PHP as the scripting language for the backend. MySQL will be used as the SQL server to store data. These software components together form the LAMP stack. Finally, we will install WordPress and secure it, which is essential. WordPress is the most widely used web application, with more than a third of all websites running on it. By the end of this project, we will have a running WordPress website, and we will have learned how to set up and manage a LAMP stack.</p>
@@ -65,7 +65,7 @@
     <p>Now we create DNS server using the Bind version 9 software on Ubuntu. Bind, or Berkely Internet Name Domain, is an open source, flexible and full feature to DNS software that is widely used due to its stability and high quality.
 Let's get started by installing the Bind9 DNS server on the Ubuntu VPS that runs in the digital ocean</p>
     
-'apt update $$ apt install bind9 bind9utils bind9-doc'    
+     'apt update $$ apt install bind9 bind9utils bind9-doc'    
     
    
    
