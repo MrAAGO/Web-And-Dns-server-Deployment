@@ -70,7 +70,8 @@ Let's get started by installing the Bind9 DNS server on the Ubuntu VPS that runs
        'apt update && apt install bind9 bind9utils bind9-doc'    
     
     
-Check status  'systemctl status bind9' 
+To Check BIND 9 status run the below command
+    'systemctl status bind9' 
    
    
    </body>
