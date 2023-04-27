@@ -17,7 +17,7 @@
         <li><a href="#bind">Installing a DNS Server(BIND9)</a></li>
     
      </ul>
-   </nav>
+ </nav>
     
     <section id="introduction">
        <h2>Introduction</h2>
