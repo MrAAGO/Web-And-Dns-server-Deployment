@@ -104,7 +104,9 @@ To Check BIND 9 status run the below command
 ![Screenshot 2023-04-26 214040](https://user-images.githubusercontent.com/86381942/234763183-fb08c844-b96d-49d3-afb3-cce6ba7945b2.png)
 
 
-   
+
+ **More Information About DNS Server Check out this Blog Post** [DNS SERVER]([https://www.example.com](https://medium.com/@Beepin/the-importance-of-dns-understanding-how-it-works-and-why-it-matters-a59f96cfabe0))   
+    
    </body>
 </html>
 
