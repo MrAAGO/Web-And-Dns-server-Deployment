@@ -109,7 +109,23 @@ To Check BIND 9 status run the below command
     
  <h4 align="center"> <a href="https://medium.com/@Beepin/the-importance-of-dns-understanding-how-it-works-and-why-it-matters-a59f96cfabe0">More Information About DNS Server Check out this Blog Post </a> </h4>
     
+Adding 2 forwarder to our DNS server. In the OPTION file I'll set the public DNS servers of Google as forwarder for my server. 
     
+                           vim/etc/bind/ named.conf.options
+    
+ ![Screenshot 2023-04-26 214713](https://user-images.githubusercontent.com/86381942/234764364-45cc99ef-c555-4534-a698-86f6d5955b4c.png)
+    
+ **Now Restart the the bind 9 service**
+    
+                   systemctl reload-or-restart bind9
+    
+  **Lets check our DNS Server**
+    
+                   dig @localhost -t a parrotlinux.org
+ 
+    
+![Screenshot 2023-04-26 214944](https://user-images.githubusercontent.com/86381942/234764808-73e48ac2-bf34-4653-9805-78aed326b8b5.png)
+
 
     
    </body>
