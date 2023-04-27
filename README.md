@@ -71,7 +71,8 @@ Let's get started by installing the Bind9 DNS server on the Ubuntu VPS that runs
     
     
 To Check BIND 9 status run the below command
-    'systemctl status bind9' 
+        
+              'systemctl status bind9' 
    
    
    </body>
