@@ -42,7 +42,7 @@
  <section id="dns">
      <h2>Getting a Domain Name</h2>
      
-     <p>Now purchase a domain and also change DNS server to Personal Dns Server and adding host and ip address with hostname ns1.linuxpro.store and provide public ip address of our server it is also recommended to have secondary DNS server for the production environment.</p>
+ <p>Now purchase a domain and also change DNS server to Personal Dns Server and adding host and ip address with hostname ns1.linuxpro.store and provide public ip address of our server it is also recommended to have secondary DNS server for the production environment.</p>
      
      
      
