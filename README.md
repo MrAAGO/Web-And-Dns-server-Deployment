@@ -14,6 +14,8 @@
         <li><a href="#introduction">Introduction</a></li>
         <li><a href="#Server">Running Server in Cloud</a></li>
         <li><a href="#dns">Getting a Domain Name</a></li>
+        <li><a href="#bind">Installing a DNS Server(BIND9)</a></li>
+    
       </ul>
     </nav>
     <section id="introduction">
@@ -57,7 +59,18 @@
 
 <p><b>Now, any DNA Querry for the linuxpro.store  domain will reach the name server called ns1linuxpro.store or ns2.linuxpro.store , which has the IP address we have provided in the advanced DNS page. That's the IP address of the Ubuntu Droplet.</b></p>     
  
- </body>
+  <section id="bind">
+     <h2>Installing a DNS Server (BIND9)</h2>
+    
+    <p>Now we create DNS server using the Bind version 9 software on Ubuntu. Bind, or Berkely Internet Name Domain, is an open source, flexible and full feature to DNS software that is widely used due to its stability and high quality.
+Let's get started by installing the Bind9 DNS server on the Ubuntu VPS that runs in the digital ocean</p>
+    
+'apt update $$ apt install bind9 bind9utils bind9-doc'    
+    
+   
+   
+   
+   </body>
 </html>
 
 
