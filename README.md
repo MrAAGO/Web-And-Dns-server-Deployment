@@ -86,6 +86,7 @@ To Check BIND 9 status run the below command
 ![Screenshot 2023-04-26 213525](https://user-images.githubusercontent.com/86381942/234762406-fcc20dc6-35b9-4f1d-ae17-5e452272e240.png)
     
  **Now Restart the the bind 9 service**
+    
                    systemctl reload-or-restart bind9
     
     
