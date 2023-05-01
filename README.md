@@ -17,7 +17,9 @@
         <li><a href="#bind">Installing a DNS Server(BIND9)</a></li>
         <li><a href="#auth">Setting Up the Authoritative BIND9 DNS Serve(BIND9)</a></li>
         <li><a href="#ap2">Installing a Web Server (Apache2)</a></li>
+        <li><a href="#up">Setting Up Virtual Hosting (Apache2)</a></li>
     
+        
    </ul>
  </nav>
     
@@ -207,7 +209,13 @@ Now you can access your web server from IP or domain name .
 
 ![Screenshot 2023-04-30 231005](https://user-images.githubusercontent.com/86381942/235415014-f00c5523-2210-4d1d-98fd-7f9403351a9e.png)
 
+ <section id="up">
+    <h2>Setting Up Virtual Hosting (Apache2)</h2>
 
+   
+If you want to host more than one domain on an Apache Web server that has a single IP address, then you have to configure something “virtual hosting”. By default Apache on Ubuntu serves files to the clients from a directory called DocumentRoot that is by default in /var/www/html.This is document root.
+   
+   
    </body>
 </html>
 
