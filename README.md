@@ -158,7 +158,30 @@ The first DNS record in the file is called the SOA or the Start of Authority rec
    
  ![Screenshot 2023-04-30 211226](https://user-images.githubusercontent.com/86381942/235409395-e7b32581-21c1-4bc3-ad09-10d1ac7edbfa.png)
 
-    
+**NOTE @=yourdomainname  IN = Internet (DNS Class) and we add different Sub Domains like ns1 have server IP if you have ns2 specify IP of and mail for mail server and external server and public DNS and Save the File**
+   
+Before restarting the server, Check if there are any syntax errors in the configuration files.
+        
+                        named-checkconf
+                        named-checkzone linuxpro.store /etc/blind/db.crystalmind.academy
+   
+![Screenshot 2023-04-30 211253](https://user-images.githubusercontent.com/86381942/235409894-b8cadaa1-a149-48b6-b908-9b3f37dcae97.png)
+   
+![Screenshot 2023-04-30 211304](https://user-images.githubusercontent.com/86381942/235409920-7add7830-7d8d-4641-92a4-1e6282567018.png)
+
+![Screenshot 2023-04-30 211515](https://user-images.githubusercontent.com/86381942/235409945-bdd7e0fd-3872-4843-8420-01a8a728083f.png)
+   
+Now Test Authoritative BIND9 DNS Server
+
+                       dig@localhost -t ns linuxpro.store
+                       dig@localhost -t a www.linuxpro.store
+
+![Screenshot 2023-04-30 211610](https://user-images.githubusercontent.com/86381942/235410116-d7e37d21-ec38-48bf-9699-a17950da96f1.png)
+
+Also check the DNS server from others client Devices.
+ 
+![Screenshot 2023-04-30 212022](https://user-images.githubusercontent.com/86381942/235410281-647460b2-7d4d-499d-96ed-bd15909185c1.png)
+
    </body>
 </html>
 
