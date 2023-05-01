@@ -158,7 +158,7 @@ The first DNS record in the file is called the SOA or the Start of Authority rec
    
  ![Screenshot 2023-04-30 211226](https://user-images.githubusercontent.com/86381942/235409395-e7b32581-21c1-4bc3-ad09-10d1ac7edbfa.png)
 
-**NOTE @=yourdomainname  IN = Internet (DNS Class) and we add different Sub Domains like ns1 have server IP if you have ns2 specify IP of and mail for mail server and external server and public DNS and Save the File**
+**NOTE @=yourdomainname  IN = Internet (DNS Class) and we add different Sub Domains like ns1 have server IP if you have ns2 specify IP and mail for mail server and external server and public DNS and Save the File**
    
 Before restarting the server, Check if there are any syntax errors in the configuration files.
         
@@ -180,7 +180,7 @@ Now Test Authoritative BIND9 DNS Server
 
 Also check the DNS server from others client Devices.
  
-![Screenshot 2023-04-30 212022](https://user-images.githubusercontent.com/86381942/235410281-647460b2-7d4d-499d-96ed-bd15909185c1.png)
+![Screenshot 2023-04-30 212022](https://user-images.githubusercontent.com/86381942/235410419-7a951428-7d2b-4a20-8eb5-2c7883cb8bcd.png)
 
    </body>
 </html>
