@@ -15,6 +15,7 @@
         <li><a href="#Server">Running Server in Cloud</a></li>
         <li><a href="#dns">Getting a Domain Name</a></li>
         <li><a href="#bind">Installing a DNS Server(BIND9)</a></li>
+        <li><a href="#auth">Setting Up the Authoritative BIND9 DNS Serve(BIND9)</a></li>
     
    </ul>
  </nav>
@@ -122,6 +123,18 @@ Adding 2 forwarder to our DNS server. In the OPTION file I'll set the public DNS
  
     
 ![Screenshot 2023-04-26 214944](https://user-images.githubusercontent.com/86381942/234764808-73e48ac2-bf34-4653-9805-78aed326b8b5.png)
+
+
+ <section id="auth">
+     <h2>Setting Up the Authoritative BIND9 DNS Serve(BIND9)</h2>
+     
+ Let's get started with configuring the server we've just installed as being authoritative for the linuxpro.store domain
+ 
+This is the master DNS server, which holds the master copy of the zone file; the zone file is the file that contains the information about the domain, such as subdomains, IP addresses and so on.This information is called DNS Records, and any of the changes are made only on this server. To add a new domain for which the server is authoritative I'm editing the following file.
+
+                 vim  /etc/bind/named.conf.local
+                 
+                 
 
 
     
