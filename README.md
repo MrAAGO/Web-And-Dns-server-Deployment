@@ -154,6 +154,9 @@ The TTL directive defines in seconds the default time to leave value for the zon
 **Let's talk about DNS records.**
 The first DNS record in the file is called the SOA or the Start of Authority record. The second DNS record is called the NS or the name server record. It indicates the authoritative DNS servers, master, and slaves for this domain. There could be more NS records in a zone file. These two records SOA and NS are mandatory for each domain.  
 
+**Now we are going to configure DNS record as below**
+   
+ ![Screenshot 2023-04-30 211226](https://user-images.githubusercontent.com/86381942/235409395-e7b32581-21c1-4bc3-ad09-10d1ac7edbfa.png)
 
     
    </body>
