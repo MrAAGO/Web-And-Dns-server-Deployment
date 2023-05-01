@@ -128,13 +128,16 @@ Adding 2 forwarder to our DNS server. In the OPTION file I'll set the public DNS
  <section id="auth">
      <h2>Setting Up the Authoritative BIND9 DNS Serve(BIND9)</h2>
      
- Let's get started with configuring the server we've just installed as being authoritative for the linuxpro.store domain
+ Let's get started with configuring the DNS server we've just installed as being authoritative for the linuxpro.store domain
  
-This is the master DNS server, which holds the master copy of the zone file; the zone file is the file that contains the information about the domain, such as subdomains, IP addresses and so on.This information is called DNS Records, and any of the changes are made only on this server. To add a new domain for which the server is authoritative I'm editing the following file.
+This is the master DNS server, which holds the master copy of the zone file; the zone file is the file that contains the information about the domain, such as subdomains, IP addresses and so on.This information is called DNS Records, and any of the changes are made only on this server. To add a new domain for which the server is authoritative I'm editing the following file with following config.
 
                  vim  /etc/bind/named.conf.local
                  
-                 
+![Screenshot 2023-04-30 192757](https://user-images.githubusercontent.com/86381942/235406507-631958c4-e78e-482b-9a6b-3f4b46e9b88b.png)
+   
+ **In this config i create a new zone and specify the master zone.**  
+           
 
 
     
