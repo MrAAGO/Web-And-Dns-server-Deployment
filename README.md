@@ -136,8 +136,23 @@ This is the master DNS server, which holds the master copy of the zone file; the
                  
 ![Screenshot 2023-04-30 192757](https://user-images.githubusercontent.com/86381942/235406507-631958c4-e78e-482b-9a6b-3f4b46e9b88b.png)
    
- **In this config i create a new zone and specify the master zone.**  
+ **In this config i created a new zone and specify the master zone.**  
            
+**The next step is to create the zone file. Instead of creating the zone file from scratch, I'll use a zone template file which exists in /etc/bind.**
+   
+                    cp /etc/bind/db.empty /etc/bind/db.linuxpro.store
+   
+ ![Screenshot 2023-04-30 193014](https://user-images.githubusercontent.com/86381942/235408661-28ddbbea-3c93-4af8-8b38-a10a4be1bcc6.png)
+   
+   
+![Screenshot 2023-04-30 193333](https://user-images.githubusercontent.com/86381942/235408715-fda92c8e-6fba-4168-a671-180c9b9fe816.png)
+   
+**Let's take a look at its contents,** 
+The zone file contains three types of entries: comments which start with a semicolon, directives which start with a dollar sign, and resource records, eg DNS records. There is only one directive in the file,
+The TTL directive defines in seconds the default time to leave value for the zone. This is the time a DNS record can be cached on other DNS servers. Or when a nonauthoritative DNS server is asking these authoritative DNS servers for a record, the server will send it to the record and tell the other server to store it in its cache for this amount of seconds.
+
+**Let's talk about DNS records.**
+The first DNS record in the file is called the SOA or the Start of Authority record. The second DNS record is called the NS or the name server record. It indicates the authoritative DNS servers, master, and slaves for this domain. There could be more NS records in a zone file. These two records SOA and NS are mandatory for each domain.  
 
 
     
