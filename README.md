@@ -16,6 +16,7 @@
         <li><a href="#dns">Getting a Domain Name</a></li>
         <li><a href="#bind">Installing a DNS Server(BIND9)</a></li>
         <li><a href="#auth">Setting Up the Authoritative BIND9 DNS Serve(BIND9)</a></li>
+        <li><a href="#ap2">Installing a Web Server (Apache2)</a></li>
     
    </ul>
  </nav>
@@ -181,6 +182,31 @@ Now Test Authoritative BIND9 DNS Server
 Also check the DNS server from others client Devices.
  
 ![Screenshot 2023-04-30 212022](https://user-images.githubusercontent.com/86381942/235410419-7a951428-7d2b-4a20-8eb5-2c7883cb8bcd.png)
+
+ <section id="ap2">
+    <h2>Installing a Web Server (Apache2)</h2>
+
+To run Web applications, we need to install a Web server.In this project we use Apache for Web Server.Apache is available within Ubuntu’s default repositories so we can install it by simply running this command :
+
+                       apt update && apt install apache2
+                        
+                      systemctl status apache2
+                      
+                      systemctl is-enabled apache2 [if it's enabled to start at boot time ]
+    
+**The next step is to adjust the firewall so that the incoming connections to the Web server are allowed.This is necessary only if there's a firewall enabled. By default, on Ubuntu ufw,is inactive** 
+    
+                        ufw status
+                        
+         
+ **IF it is active then run this command**
+   
+                       ufw allow 'Apache Full'
+                       
+Now you can access your web server from IP or domain name .
+
+![Screenshot 2023-04-30 231005](https://user-images.githubusercontent.com/86381942/235415014-f00c5523-2210-4d1d-98fd-7f9403351a9e.png)
+
 
    </body>
 </html>
