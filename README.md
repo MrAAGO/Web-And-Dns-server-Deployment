@@ -215,7 +215,7 @@ Now you can access your web server from IP or domain name .
    
 If you want to host more than one domain on an Apache Web server that has a single IP address, then you have to configure something “virtual hosting”. By default Apache on Ubuntu serves files to the clients from a directory called DocumentRoot that is by default in /var/www/html.This is document root.
    
-    ◍ **Creating a new directory for the first website**
+   ◍ **Creating a new directory for the first website**
                              
                                   mkdir /var/www/linuxpro.store
   
@@ -243,7 +243,33 @@ If you want to host more than one domain on an Apache Web server that has a sing
    
    ![Screenshot 2023-05-15 104917](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/bc55793d-5246-4e89-9c52-259e33f3fa2d)
 
+   ◍ **Creating a new virtual host file for Apache 2**  
    
+                            cd /etc/apache2
+   
+                            vim sites-available/linuxpro.store.conf
+   
+  ◍ **In the conf file i created below content for the host file** 
+   
+    ![Screenshot 2023-05-15 104942](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/cf974eb7-7e4d-4ad9-9196-4c07af9be035)
+                    
+   ![Screenshot 2023-05-15 104942](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/bda7caa6-bd65-4e5a-8b57-e41abda90b48)
+
+ ◍ **Enable Virtual host**
+   
+                          a2ensite linuxpro.store
+                     
+                         systemctl reload apache2
+   
+   ![Screenshot 2023-05-15 105443](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/d184a85d-b61e-4df9-ba3d-0b9403a0e6c1)
+
+   
+    ◍ **Now lets check our Website**
+
+   
+   ![Screenshot 2023-05-15 105611](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/6d812002-92a3-4d9e-a80b-4ff14e957c1e)
+
+          
    
    </body>
 </html>
