@@ -252,7 +252,8 @@ If you want to host more than one domain on an Apache Web server that has a sing
   ◍ **In the conf file i created below content for the host file** 
    
     
-  ![Screenshot 2023-05-15 104942](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/cf974eb7-7e4d-4ad9-9196-4c07af9be035)
+![Screenshot 2023-05-15 104642](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/b2f0db0a-2b37-490d-9618-8472526c819c)
+
    
                     
    ![Screenshot 2023-05-15 104942](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/bda7caa6-bd65-4e5a-8b57-e41abda90b48)
