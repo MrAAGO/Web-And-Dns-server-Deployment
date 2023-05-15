@@ -215,14 +215,14 @@ Now you can access your web server from IP or domain name .
    
 If you want to host more than one domain on an Apache Web server that has a single IP address, then you have to configure something “virtual hosting”. By default Apache on Ubuntu serves files to the clients from a directory called DocumentRoot that is by default in /var/www/html.This is document root.
    
-**Creating a new directory for the first website
+    ◍ **Creating a new directory for the first website**
                              
                                   mkdir /var/www/linuxpro.store
   
    ![Screenshot 2023-05-15 104338](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/da8e8831-94ec-4aae-8b43-f0a4003521df)
 
-  
-**Set the ownership of this directory.Let's find out the user under which Apache runs!
+
+   ◍ **Let's find out the user under which Apache runs**
 
                                   ps -ef | grep apache2 
    
