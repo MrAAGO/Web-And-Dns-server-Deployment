@@ -18,6 +18,7 @@
         <li><a href="#auth">Setting Up the Authoritative BIND9 DNS Serve(BIND9)</a></li>
         <li><a href="#ap2">Installing a Web Server (Apache2)</a></li>
         <li><a href="#up">Setting Up Virtual Hosting (Apache2)</a></li>
+        <li><a href="#ssl">Securing Apache with OpenSSL and Digital Certificates(Apache2))</a></li>
     
         
    </ul>
@@ -272,7 +273,13 @@ If you want to host more than one domain on an Apache Web server that has a sing
    
    ![Screenshot 2023-05-15 105611](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/6d812002-92a3-4d9e-a80b-4ff14e957c1e)
 
-          
+     
+   <section id="ssl">
+    <h2>Securing Apache with OpenSSL and Digital Certificates(Apache2)</h2>
+   
+     
+     
+   
    
    </body>
 </html>
