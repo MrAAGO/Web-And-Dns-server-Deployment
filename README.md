@@ -302,8 +302,15 @@ Apache and Nginx.
      
 ![Screenshot 2023-05-17 104822](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/670a097d-b1a2-414a-842a-6d5aa9196812)
 
+![Screenshot 2023-05-17 104913](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/a5ba0cde-a882-4023-bd25-0787768c7a22)
      
+ 
+ ◍ **Successfully deploy our certificate**  
+![Untitled](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/48f9d940-33bd-4005-8169-01446c8974b9)
      
+![Screenshot 2023-06-04 220222](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/fd6683cf-41a0-41ae-b44d-1365a5e197d7)
+     
+
    
    
    </body>
