@@ -590,17 +590,21 @@ If the PHP code is executed correctly and you see the expected information on th
 
 
   <section id="phps">
-    <h2>Installing and Securing the MySql Serverh2>  
+    <h2>Installing and Securing the MySql Server>  
       
- Now that we have our web server up and running with PHP installed and integrated, the final component we need to install is the MySQL database server. MySQL is a fast, scalable, and user-friendly database management system that will store and manage data for our web applications.
+Now that we have our web server up and running with PHP installed and integrated, the final component we need to install is the MySQL database server. MySQL is a fast, scalable, and user-friendly database management system that will store and manage data for our web applications.
 
+      
 ◍ To install the MySQL server, we can use the following command:    
 
-                                                           sudo apt install mysql-server
+                                                        
+                                                              sudo apt install mysql-server
       
 ◍ Once the installation is complete, the MySQL server will automatically start running. You can check its status by running the following command:
 
-                                                           systemctl status mysql
+                                                             systemctl status mysql
+      
+      
 ◍ If the server is active and running, you will see the status information displayed. The daemon process running the MySQL server is called mysqld.By default, MySQL is not very secure, so it is recommended to run a security script that comes preinstalled with MySQL. This script will remove some insecure default settings and secure access to the database server.
 
 To run the MySQL security installation script, execute the following command:
