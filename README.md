@@ -591,7 +591,7 @@ If the PHP code is executed correctly and you see the expected information on th
   <section id="phps">
     <h2>Installing and Securing the MySql Serverh2>  
       
- **Now that we have our web server up and running with PHP installed and integrated, the final component we need to install is the MySQL database server. MySQL is a fast, scalable, and user-friendly database management system that will store and manage data for our web applications.
+ **Now that we have our web server up and running with PHP installed and integrated, the final component we need to install is the MySQL database server. MySQL is a fast, scalable, and user-friendly database management system that will store and manage data for our web applications.**
 
 ◍ To install the MySQL server, we can use the following command:    
 
