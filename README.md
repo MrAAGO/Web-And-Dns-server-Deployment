@@ -276,7 +276,31 @@ If you want to host more than one domain on an Apache Web server that has a sing
      
    <section id="ssl">
     <h2>Securing Apache with OpenSSL and Digital Certificates(Apache2)</h2>
-   
+     
+  ![screenshot-www javatpoint com-2023 06 04-21_39_31](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/3f05d6a1-6d9c-46b5-86fd-c1457094e4a1)
+
+This set up consists of two parts: getting a digital certificate from a certificate authority for the server and configuring the Apache web server to use the certificate and encrypt the connections
+to the clients using OpenSSL and other cryptographic protocols.In this projecet we'll use Let's Encrypt as the certificate authority because it offers a free certificate for your website.     
+It also simplifies the process by providing a software client called the Certbot that attempts to automate the most of the required steps. Currently, the entire process of obtaining and installing a certificate is fully automated on both.
+
+Apache and Nginx.     
+ ◍ **Installing Certbot and the Python plugin**
+
+                `apt update && apt install certbot python3-certbot --apach`  /etc/apache2]
+     
+ ◍ **request the Certificate Authority and issues a certificate to domain**
+                 
+                 `certbot -d linuxpro.store`
+     
+                 `webmaster@linuxpro.store
+       
+                 `A`
+     
+                 `y`
+      
+                `2`
+      ![Screenshot 2023-05-17 104822](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/670a097d-b1a2-414a-842a-6d5aa9196812)
+
      
      
    
