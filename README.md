@@ -393,9 +393,13 @@ An alternative method is to use a .htaccess file, which allows configuration cha
 Let's explore how it works:
 
 ◍ A file named .htaccess containing one or more configuration directives is placed in a specific directory.
+   
 ◍ The directives in the .htaccess file are applied to that directory, its subdirectories, and the files within them.
+   
 ◍ The use of .htaccess is determined by the AllowOverride directive, which specifies the categories of directives that will be honored if found in a .htaccess file.
+   
 ◍ If you want to disable .htaccess in a directory, set AllowOverride to "none" for that directory.
+   
 ◍ For example, to enable the use of .htaccess for the entire site, add the following directory section in the virtual host file:
    
                                  <Directory /var/www/crystalmind.academy>
