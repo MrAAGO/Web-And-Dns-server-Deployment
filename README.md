@@ -19,6 +19,7 @@
         <li><a href="#ap2">Installing a Web Server (Apache2)</a></li>
         <li><a href="#up">Setting Up Virtual Hosting (Apache2)</a></li>
         <li><a href="#ssl">Securing Apache with OpenSSL and Digital Certificates(Apache2))</a></li>
+        <li><a href="#access">Access Control by Source IP Address</a></li>
     
         
    </ul>
@@ -310,8 +311,43 @@ Apache and Nginx.
      
 ![Screenshot 2023-06-04 220222](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/fd6683cf-41a0-41ae-b44d-1365a5e197d7)
      
+ <section id="access">
+    <h2>Access Control by Source IP Address</h2>
+   
+◍The Apache Web server allows us to control access to our website based on the visitors' source IP address. We can control the access to directories, files, or URLs. This is common and useful because most web applications, such as blogs, online stores, and content management systems, have an administration section that can only be accessed from specific IP addresses, such as the IP address of the administrator.
+
+Let's see an example of how to allow access to a specific directory of the website only to visitors that are coming from some specific source IP addresses. This is a common practice because it improves security. By default, access is allowed to all clients. First, we'll create the directory that stores the protected contents.
+
+Here are the steps involved in creating a directory and restricting access to it based on IP address:
+
+◍ Create the directory.
+   
+                       mkdir /var/www/linuxpro.store/admin
+
+![Screenshot 2023-06-04 221148](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/a00d25c1-e256-4aac-82bf-1bbeedb3a1ff)
+   
+![Screenshot 2023-06-04 221131](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/e5a420f9-a9b3-41d9-abf5-0458494c3bba)
+
+ ◍ Open the Apache configuration file.
+ ◍ Add the following lines to the configuration file:
+   
+ <Directory /path/to/directory>
+Order allow,deny
+Allow from 192.168.1.0/24
+Deny from all
+</Directory>
+
+![Screenshot 2023-06-04 223035](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/9e0bffeb-1864-44d2-b5c7-d4658acaa522)
 
    
+ ◍Restarting the Apache web server    
+   
+                        systemctl restart apache2
+   
+◍Accessing the webpage again you got 403 error.
+ 
+ ![Screenshot 2023-06-04 223103](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/533a9cb0-b189-4694-8fcf-5c4b34ab60df)
+
    
    </body>
 </html>
