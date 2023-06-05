@@ -320,7 +320,7 @@ Let's see an example of how to allow access to a specific directory of the websi
 
 Here are the steps involved in creating a directory and restricting access to it based on IP address:
 
-◍ Create the directory.
+◍ **Create the directory.**
    
                        mkdir /var/www/linuxpro.store/admin
 
@@ -328,8 +328,8 @@ Here are the steps involved in creating a directory and restricting access to it
    
 ![Screenshot 2023-06-04 221131](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/e5a420f9-a9b3-41d9-abf5-0458494c3bba)
 
- ◍ Open the Apache configuration file.
- ◍ Add the following lines to the configuration file:
+ ◍ **pen the Apache configuration file.**
+ ◍ **Add the following lines to the configuration file:**
    
  <Directory /path/to/directory>
 Order allow,deny
@@ -340,11 +340,11 @@ Deny from all
 ![Screenshot 2023-06-04 223035](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/9e0bffeb-1864-44d2-b5c7-d4658acaa522)
 
    
- ◍Restarting the Apache web server    
+ ◍**Restarting the Apache web server**    
    
                         systemctl restart apache2
    
-◍Accessing the webpage again you got 403 error.
+◍**Accessing the webpage again you got 403 error**.
  
  ![Screenshot 2023-06-04 223103](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/533a9cb0-b189-4694-8fcf-5c4b34ab60df)
 
