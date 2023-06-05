@@ -23,6 +23,7 @@
         <li><a href="#file">The <Files> Directive</a></li>
         <li><a href="#ht">The .htaccess File</a></li>
         <li><a href="#http">HTTP Digest Authentication</a></li>
+        <li><a href="#https">HTTP Compression</a></li>
         
     
         
@@ -470,7 +471,44 @@ To test the setup, create a directory called protected within the website's Docu
 
   ![Screenshot 2023-06-04 230708](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/fe1890ad-8134-4191-b285-b73590fae94a)
 
-   </body>
+   
+     
+ <section id="https">
+    <h2>HTTP Compression</h2>
+   
+ The recommended Apache module for data compression is called mod_deflate. This module allows the web server to compress the output before delivering it to the client, resulting in faster loading times for web pages. Compressing the contents of a web page also reduces bandwidth usage, which can positively impact the site's performance and page rank in search engine evaluations.
+
+By using mod_deflate, text files such as HTML, TXT, XML, JavaScript, JSON, and others can be compressed to approximately 20 to 40% of their original sizes. However, it is important for the web server to ensure that the client receiving the compressed data can understand and render it correctly.
+
+To enable mod_deflate, use the command 
+                                                      a2enmod deflate. 
+   
+However, in many cases, mod_deflate may already be enabled. The next step is to configure the module to specify which files should be compressed and customize other options.
+
+Open the configuration file for the deflate module 
+   
+                                            vim /etc/apache2/mods-enabled/deflate.conf. 
+   
+ The existing options in the file specify the file types that will be delivered in a compressed format. You can add more AddOutputFilterByType directives to include additional file types.
+
+Note that it is redundant to compress image and multimedia files like JPEG, PNG, GIF, or MKV, as they are already compressed. Additionally, files such as PDF, Word, or Excel documents are not suitable candidates for compression.
+
+The official Apache documentation provides examples of enabling compression for all document types except for GIF, PNG, and JPEG files using AddOutputFilterByType directives.
+
+Another directive called DeflateCompressionLevel allows you to specify the compression level. A higher value results in better compression but requires more CPU resources. The value can range from 1 (least compression) to 9 (most compression), with a default value of 6. For example, you can set the default compression level to 7 using DeflateCompressionLevel 7.
+
+To test the newly configured module, open the virtual host file of your site and add directives that log useful information about compression, such as the compression ratio. Define a log format and specify the log file where the compression information will be stored. Remember to comment out any other custom log directives.
+
+Save the virtual host file and restart the web server for the changes to take effect.
+
+To verify that compression is working, you can download a large text file or any file of your choice to the DocumentRoot directory. Access the file using a browser, and then check the compression ratio in the log file specified earlier. The compression ratio indicates how effectively the file was compressed.
+
+It's worth noting that there is another module called mod_gzip that can be used for compression. However, mod_deflate is generally considered better and recommended for compression purposes. 
+  
+ ![Screenshot 2023-06-04 231504](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/08bb58a3-de2e-48ad-b4dc-44dd60a1f85e)
+
+  
+  </body>
 </html>
 
 
