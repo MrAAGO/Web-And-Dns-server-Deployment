@@ -290,16 +290,17 @@ Apache and Nginx.
      
  ◍ **request the Certificate Authority and issues a certificate to domain**
                  
-                 `certbot -d linuxpro.store`
+                 certbot -d linuxpro.store
      
-                 `webmaster@linuxpro.store
+                 webmaster@linuxpro.store
        
-                 `A`
+                 A
      
-                 `y`
+                 y
       
-                `2`
-      ![Screenshot 2023-05-17 104822](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/670a097d-b1a2-414a-842a-6d5aa9196812)
+                 2
+     
+![Screenshot 2023-05-17 104822](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/670a097d-b1a2-414a-842a-6d5aa9196812)
 
      
      
