@@ -26,6 +26,7 @@
         <li><a href="#https">HTTP Compression</a></li>
         <li><a href="#set">SetHandler and Server Status</a></li>
         <li><a href="#php">Installing PHP</a></li>
+        <li><a href="#phps">Installing and Securing the MySql Server</a></li>
         
     
         
@@ -586,7 +587,41 @@ If the PHP code is executed correctly and you see the expected information on th
    
 ![Screenshot 2023-06-04 234138](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/2009a75d-dfb8-48f4-ab77-862aac633a7a)
 
-   
+
+  <section id="phps">
+    <h2>Installing and Securing the MySql Serverh2>  
+      
+ **Now that we have our web server up and running with PHP installed and integrated, the final component we need to install is the MySQL database server. MySQL is a fast, scalable, and user-friendly database management system that will store and manage data for our web applications.
+
+◍ To install the MySQL server, we can use the following command:    
+
+                                                           sudo apt install mysql-server
+      
+◍ Once the installation is complete, the MySQL server will automatically start running. You can check its status by running the following command:
+
+                                                           systemctl status mysql
+◍ If the server is active and running, you will see the status information displayed. The daemon process running the MySQL server is called mysqld.By default, MySQL is not very secure, so it is recommended to run a security script that comes preinstalled with MySQL. This script will remove some insecure default settings and secure access to the database server.
+
+To run the MySQL security installation script, execute the following command:
+      
+                                                       sudo mysql_secure_installation
+
+**During the script, you will be prompted to make several security-related choices. You can choose to use the validated password plugin to test the strength of MySQL user passwords. It is recommended to select the strongest level of password strength. You will also be asked to set a password for the MySQL root user. Ensure that this password is secure, as the root user has full privileges on the database server.**
+
+Additionally, the script will ask if you want to remove the anonymous user, restrict root access to the local machine, remove the test database, and reload the privilege tables. It is recommended to answer "yes" to these prompts to enhance the security of your MySQL server.
+
+Once the script completes, the MySQL server will be properly secured.
+
+**To test the communication with the MySQL server, you can use the MySQL command-line client. Run the following command to connect to the MySQL server as the root user:**
+      
+                                                       mysql -u root
+
+  Since you are running the command as the system root user, it will not prompt for a password. Now you can manage the server using SQL statements.
+
+Please note that in the latest version of MySQL, you cannot authenticate as a MySQL user by providing a password directly. Instead, you run the `mysql` command as the system root user. If you want to authenticate to the server using an external program like phpMyAdmin, you need to create a dedicated MySQL user specifically for that application.
+
+With the installation of the MySQL database server, our LAMP stack is complete. We have Apache as the web server, MySQL as the database engine, and PHP integrated into Apache to interact with the database for web applications.    
+      
    </body>
 </html>
 
