@@ -24,6 +24,7 @@
         <li><a href="#ht">The .htaccess File</a></li>
         <li><a href="#http">HTTP Digest Authentication</a></li>
         <li><a href="#https">HTTP Compression</a></li>
+        <li><a href="#set">SetHandler and Server Status</a></li>
         
     
         
@@ -507,8 +508,37 @@ It's worth noting that there is another module called mod_gzip that can be used 
   
  ![Screenshot 2023-06-04 231504](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/08bb58a3-de2e-48ad-b4dc-44dd60a1f85e)
 
+ <section id="set">
+    <h2>SetHandler and Server Status</h2>
+   
+ ◍**Monitoring the web server is essential for gathering information about events and server performance. While server logs provide historical data, they often lack real-time information about the server's current state, including client requests and resource consumption. To address this, Apache Web server offers the status module, which exposes server metrics in an easily readable HTML format.**
+
+To enable the mod_status module, use the command a2enmod status. If it's already enabled, you can proceed to configure it.
+
+Open the configuration file for the mod_status module, typically located at 
+                                                 
+                                                   /etc/apache2/mods-available/status.conf.
+   
+                     In this file, you'll find various directives to configure the module.
+
+One important directive is the <Location> directive, which limits the scope of enclosed directives based on the URL. For example, if the URL contains /server-status, the directives inside that section will be applied. Note that the server-status location operates independently of the filesystem, so there's no need for an actual directory or file named server-status. Within this section, the SetHandler server-status directive enables an internal and predefined action in Apache. It's crucial to restrict access to the server-status resource to prevent unauthorized access and protect sensitive server and system information.
+
+To restrict access, you can use the Require directive with the ip parameter followed by the IP address you want to whitelist. For example, Require ip <your_public_ip_address>. Add this directive within the <Location> section to limit access to the server status page.
+
+Save the configuration file and restart the web server for the changes to take effect.
+
+To access the server statistics, open a web browser and enter the URL http://<your_domain_or_server_name>/server-status. This will display useful information about the server and its connections. If there are no concurrent connections, you will only see the client that requested the server status.
+
+To simulate concurrent connections for benchmarking purposes, you can use a tool called ab (ApacheBench). Run the command ab -n 100 -c 10 https://localhost/, which simulates 100 requests with a maximum of 10 requests running concurrently. Refresh the server status page in your browser, and you will observe information about the clients and requested resources.
+
+Additionally, if your browser supports automatic refresh, you can add ?refresh=n to the server status URL, where n represents the number of seconds between each refresh. For example, http://<your_domain_or_server_name>/server-status?refresh=2 will automatically refresh the page every two seconds.
+
+By following these steps, you can effectively monitor your server's performance using mod_status and gather real-time information about its connections and resource usage.
   
-  </body>
+   
+   
+   
+   </body>
 </html>
 
 
