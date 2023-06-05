@@ -417,6 +417,8 @@ Next, create a directory for your website, along with a .htaccess file. For this
  Save the file and create a few files in that directory. Accessing the website directory via a browser will now only show the files that match the specified criteria since other IP addresses are denied access.
 To make changes, open the .htaccess file and modify the allowed IP address. Save the file and reload the web page to see the updated access restrictions. It's important to note that there is no need to restart the web server for changes in the .htaccess file to take effect. Additionally, .htaccess files should be used when content providers require configuration changes on a per-directory basis but do not have root access to the server system.It's generally recommended to avoid using .htaccess files if you have access to the Apache main server config file. Any directive that can be included in the .htaccess file is better placed in a directory block within the main config file for better performance.Remember, .htaccess files provide a flexible way to manage per-directory configuration but should be used judiciously.
                                          
+![screenshot-www udemy com-2023 06 04-22_50_50](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/2b2cea97-a3d6-476c-a8a0-6e47466dadf2)
+
                                          
    
    </body>
