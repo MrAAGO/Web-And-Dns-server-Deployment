@@ -25,6 +25,7 @@
         <li><a href="#http">HTTP Digest Authentication</a></li>
         <li><a href="#https">HTTP Compression</a></li>
         <li><a href="#set">SetHandler and Server Status</a></li>
+        <li><a href="#php">Installing PHP</a></li>
         
     
         
@@ -519,7 +520,8 @@ Open the configuration file for the mod_status module, typically located at
                                                  
                                                    /etc/apache2/mods-available/status.conf.
    
-                     In this file, you'll find various directives to configure the module.
+                    
+ In this file, you'll find various directives to configure the module.
 
 One important directive is the <Location> directive, which limits the scope of enclosed directives based on the URL. For example, if the URL contains /server-status, the directives inside that section will be applied. Note that the server-status location operates independently of the filesystem, so there's no need for an actual directory or file named server-status. Within this section, the SetHandler server-status directive enables an internal and predefined action in Apache. It's crucial to restrict access to the server-status resource to prevent unauthorized access and protect sensitive server and system information.
 
@@ -527,16 +529,63 @@ To restrict access, you can use the Require directive with the ip parameter foll
 
 Save the configuration file and restart the web server for the changes to take effect.
 
-To access the server statistics, open a web browser and enter the URL http://<your_domain_or_server_name>/server-status. This will display useful information about the server and its connections. If there are no concurrent connections, you will only see the client that requested the server status.
+To access the server statistics, open a web browser and enter the URL 
+   
+                                                http://<your_domain_or_server_name>/server-status. 
+   
+ This will display useful information about the server and its connections. If there are no concurrent connections, you will only see the client that requested the server status.
 
-To simulate concurrent connections for benchmarking purposes, you can use a tool called ab (ApacheBench). Run the command ab -n 100 -c 10 https://localhost/, which simulates 100 requests with a maximum of 10 requests running concurrently. Refresh the server status page in your browser, and you will observe information about the clients and requested resources.
+To simulate concurrent connections for benchmarking purposes, you can use a tool called ab (ApacheBench). Run the command
+   
+                                                 ab -n 100 -c 10 https://localhost/
+   
+   , which simulates 100 requests with a maximum of 10 requests running concurrently. Refresh the server status page in your browser, and you will observe information about the clients and requested resources.
 
-Additionally, if your browser supports automatic refresh, you can add ?refresh=n to the server status URL, where n represents the number of seconds between each refresh. For example, http://<your_domain_or_server_name>/server-status?refresh=2 will automatically refresh the page every two seconds.
+Additionally, if your browser supports automatic refresh, you can add ?refresh=n to the server status URL, where n represents the number of seconds between each refresh. For example, 
+    
+                                                               http://<your_domain_or_server_name>/server-status?refresh=2 
+   
+ will automatically refresh the page every two seconds.
 
 By following these steps, you can effectively monitor your server's performance using mod_status and gather real-time information about its connections and resource usage.
   
    
+ <section id="php">
+    <h2>Installing PHP</h2>   
    
+◍ **To install PHP, one of the most widely used server-side programming languages, follow these steps:**
+
+Update the package lists and install the necessary PHP packages by running the command: 
+   
+                                        apt update && apt install php php-mysql libapache2-mod-php.
+
+
+ Once the packages are installed, restart Apache to load the PHP module: 
+   
+                                                      systemctl restart apache2.
+
+To verify the PHP installation and check the installed version, run: **php -v**. You should see the PHP version displayed (e.g., PHP 7.4.3).
+
+To test if Apache and PHP are configured correctly to handle dynamic content, follow these steps:
+
+Create a PHP file in the DocumentRoot directory of your virtual host. For example: 
+   
+                                                    vim /var/www/linuxpro.store/test.php.
+
+Add some PHP code to the file. Note: I'm not providing specific PHP code examples here, but you can write PHP code according to your needs.
+   
+                                                        <?php
+                                                       phpinfo();
+                                                            ?>
+
+
+Save the file and access it in your browser by entering the URL http://your_domain/test.php.
+
+If the PHP code is executed correctly and you see the expected information on the web page, it means that PHP and Apache are working together and configured properly. However, if you encounter issues such as seeing the PHP code as plain text or the browser trying to download the PHP file, there may be a problem that needs to be troubleshooted and fixed.
+
+   
+![Screenshot 2023-06-04 234138](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/2009a75d-dfb8-48f4-ab77-862aac633a7a)
+
    
    </body>
 </html>
