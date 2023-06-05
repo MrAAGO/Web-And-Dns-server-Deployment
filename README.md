@@ -510,10 +510,11 @@ It's worth noting that there is another module called mod_gzip that can be used 
   
  ![Screenshot 2023-06-04 231504](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/08bb58a3-de2e-48ad-b4dc-44dd60a1f85e)
 
- <section id="set">
+ 
+   <section id="set">
     <h2>SetHandler and Server Status</h2>
    
- ◍**Monitoring the web server is essential for gathering information about events and server performance. While server logs provide historical data, they often lack real-time information about the server's current state, including client requests and resource consumption. To address this, Apache Web server offers the status module, which exposes server metrics in an easily readable HTML format.**
+ ◍Monitoring the web server is essential for gathering information about events and server performance. While server logs provide historical data, they often lack real-time information about the server's current state, including client requests and resource consumption. To address this, Apache Web server offers the status module, which exposes server metrics in an easily readable HTML format.**
 
 To enable the mod_status module, use the command a2enmod status. If it's already enabled, you can proceed to configure it.
 
@@ -606,13 +607,13 @@ To run the MySQL security installation script, execute the following command:
       
                                                        sudo mysql_secure_installation
 
-**During the script, you will be prompted to make several security-related choices. You can choose to use the validated password plugin to test the strength of MySQL user passwords. It is recommended to select the strongest level of password strength. You will also be asked to set a password for the MySQL root user. Ensure that this password is secure, as the root user has full privileges on the database server.**
+During the script, you will be prompted to make several security-related choices. You can choose to use the validated password plugin to test the strength of MySQL user passwords. It is recommended to select the strongest level of password strength. You will also be asked to set a password for the MySQL root user. Ensure that this password is secure, as the root user has full privileges on the database server.
 
 Additionally, the script will ask if you want to remove the anonymous user, restrict root access to the local machine, remove the test database, and reload the privilege tables. It is recommended to answer "yes" to these prompts to enhance the security of your MySQL server.
 
 Once the script completes, the MySQL server will be properly secured.
 
-**To test the communication with the MySQL server, you can use the MySQL command-line client. Run the following command to connect to the MySQL server as the root user:**
+To test the communication with the MySQL server, you can use the MySQL command-line client. Run the following command to connect to the MySQL server as the root user:
       
                                                        mysql -u root
 
