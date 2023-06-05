@@ -20,6 +20,7 @@
         <li><a href="#up">Setting Up Virtual Hosting (Apache2)</a></li>
         <li><a href="#ssl">Securing Apache with OpenSSL and Digital Certificates(Apache2))</a></li>
         <li><a href="#access">Access Control by Source IP Address</a></li>
+        <li><a href="#file">The <Files> Directive</a></li>
     
         
    </ul>
@@ -328,7 +329,7 @@ Here are the steps involved in creating a directory and restricting access to it
    
 ![Screenshot 2023-06-04 221131](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/e5a420f9-a9b3-41d9-abf5-0458494c3bba)
 
- ◍ **pen the Apache configuration file.**
+ ◍ **open the Apache configuration file.**
  ◍ **Add the following lines to the configuration file:**
    
  <Directory /path/to/directory>
@@ -348,7 +349,41 @@ Deny from all
  
  ![Screenshot 2023-06-04 223103](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/533a9cb0-b189-4694-8fcf-5c4b34ab60df)
 
-   
+ <section id="file">
+    <h2>The <Files> Directive</h2>
+
+ Let's consider an example of using the "Files" directive within a virtual host configuration. In the same virtual host, we are adding a "Files" section, where the directives within this section will be applied to any object with a name matching the specified file name.
+
+For instance, let's say we want to restrict access to a file called "report.txt" to only clients from a specific IP address. We can add the following directives:    
+      
+                                  <Files "report.txt">
+                                   Require all denied
+                                 Require ip <specific_IP_address>
+                                                  </Files>
+
+**Please note that these changes will not take effect until the web server is restarted. Currently, anyone can access the "report.txt" file because the server has not been restarted yet.**
+
+Once the server is restarted, attempting to access the file will result in a "403 Forbidden" error message since the IP address is not whitelisted. To allow access, we can add the IP address to the list of allowed ones using the following directive:   
+                                      Require ip <specific_IP_address>
+
+                                    
+**To find your public IP address, you can use the command curl ident.me in the terminal.**
+
+After saving the file and restarting the Apache web server, accessing the page again should grant access to the file for the specified IP address.
+It's worth mentioning that the "Files" section can be nested inside "Directory" sections to restrict the portion of the filesystem they apply to. This allows for more granular access control.
+In addition to specifying exact filenames, wildcards and regular expressions can be used in the "Files" directive. For example, "*.pdf" will match all PDF files, while "?at.pdf" will match "cat.pdf," "bat.pdf," "hat.pdf," and so on. Remember to close the "Files" directive properly.Regular expressions can also be used with the addition of the tilde character (~). Here's an example:
+Suppose we want to create an IP address blacklist, allowing anyone to view image files except visitors coming from specific IP addresses. We can use the following "Files" section:
+                                    
+                                    
+                                    <Files ~ "\.(gif|jpe?g|png)$">
+                                          Require all granted
+                                  Require not ip <specific_IP_address>
+                                                       </Files>
+
+In this case, the regular expression will match any string ending with ".gif," ".jpeg," ".jpg," or ".png." The "Require all" directive is necessary here. Inside the "Require all" section, we specify that access is granted, and then we add another directive, "Require not ip," followed by the blacklisted IP address.After saving the file and restarting the server, attempting to access a GIF file, for example, will result in a "403 Forbidden" error if the IP address is blacklisted.To make changes, simply edit the virtual host file again, modify the IP address, save it, restart Apache, and reload the page. Multiple IP addresses can be added on the same line if desired.                                     
+                                      
+                                    
+                                    
    </body>
 </html>
 
