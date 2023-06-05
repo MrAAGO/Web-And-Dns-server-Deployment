@@ -21,7 +21,9 @@
         <li><a href="#ssl">Securing Apache with OpenSSL and Digital Certificates(Apache2))</a></li>
         <li><a href="#access">Access Control by Source IP Address</a></li>
         <li><a href="#file">The <Files> Directive</a></li>
-        <li><a href="#ht">The .htaccess File</a></li>  
+        <li><a href="#ht">The .htaccess File</a></li>
+        <li><a href="#http">HTTP Digest Authentication</a></li>
+        
     
         
    </ul>
@@ -419,8 +421,55 @@ To make changes, open the .htaccess file and modify the allowed IP address. Save
                                          
 ![screenshot-www udemy com-2023 06 04-22_50_50](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/2b2cea97-a3d6-476c-a8a0-6e47466dadf2)
 
-                                         
-   
+<section id="http">
+    <h2>HTTP Digest Authentication</h2>
+  
+**HTTP authentication is a method used to secure specific parts of a website by requiring additional credentials such as usernames and passwords. It is commonly employed to restrict access to admin panels, backend services, and other sensitive resources. When used in conjunction with IP-based restrictions and HTTPS, it can provide robust security for web-based resources.**
+
+Let's explore how to utilize HTTP authentication to protect a directory. There are two types of HTTP authentication: Basic and Digest. In this example, we will focus on digest authentication, which is considered more secure and recommended over basic authentication.
+  
+◍**To begin, we need to generate a password file using the htdigest utility provided by the apache2-utils package. Ensure the package is installed by running apt install apache2-utils. Then, use the following command to generate the password file:**  
+  
+                                          htdigest -c /etc/apache2/.htpasswd myserver Johnny
+
+**In this command, the -c option creates the password file if it doesn't exist or overwrites it if it does. The path specified after -c is the location of the password file, and myserver represents the realm domain that should match the AuthName directive in the Apache config file. Finally, Johnny is the username for authentication.**
+
+◍ Next, we need to configure the protected directory in Apache. You can add the required directives either in a directory section within the virtual host config file or in a .htaccess file located in the target directory. However, it is recommended to avoid using .htaccess when you have access to the main Apache config file.
+
+Open the virtual host config file of your website and add a new Directory section for the target directory, for example:
+
+                                               <Directory /var/www/linuxpro.store/protected>
+                                                                 AuthType Digest
+                                                              AuthName "myserver"
+                                                            AuthDigestProvider file
+                                                       AuthUserFile /etc/apache2/.htpasswd
+                                                               Require valid-user
+                                                                 </Directory>
+
+In this example, we specify the directory path, set the AuthType to Digest, provide the AuthName that matches the realm domain from the htdigest command, specify the AuthDigestProvider as file, and indicate the path to the password file using AuthUserFile. Finally, the Require valid-user directive ensures that only authenticated users can access the directory.
+
+**Save the file and exit the editor. Then, enable the auth_digest module by running**
+               
+                                       a2enmod auth_digest
+
+**Restart the web server for the changes to take effect:
+  
+                                     systemctl restart apache2
+
+![Screenshot 2023-06-04 225916](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/c49bee3d-1797-446e-88ac-11767ed371e6)
+ 
+To test the setup, create a directory called protected within the website's DocumentRoot and place an index.html file inside. Access the directory using a browser, and you will be prompted to enter credentials. Provide the correct username and password, and you will be granted access to the directory's contents.
+
+**Keep in mind that you can combine HTTP authentication with host or IP-based authorization for enhanced security.**                                      
+                                                 
+                                                   mkdir /var/www/linuxpro.store/protected
+
+                           echo "This File is Protected by HTTP Digest Auth" > /var/www/linuxpro.store/protected/index.html
+
+  ![Screenshot 2023-06-04 230650](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/6cff41d2-b97b-4dea-b128-2d03d50822f7)
+
+  ![Screenshot 2023-06-04 230708](https://github.com/MrAAGO/Web-And-Dns-server-Deployment/assets/86381942/fe1890ad-8134-4191-b285-b73590fae94a)
+
    </body>
 </html>
 
